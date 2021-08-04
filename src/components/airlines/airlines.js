@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { AirlinesGridData } from './airlines-grid-data';
 
 export class Airlines extends Component {
 
@@ -14,8 +15,10 @@ export class Airlines extends Component {
 
         return (
             <div>
-                airlines
                 <input type="button" value="Dispatch method from Saga" onClick={this.handleClickSaga} />
+                <br />
+                <br />
+                <AirlinesGridData />
             </div>
         )
     }

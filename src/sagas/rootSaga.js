@@ -9,7 +9,6 @@ function* getData(){
 
     try{
         const res = yield call(sample.getSample);
-        debugger;
 
         yield put({ type: "SET_DATA_SAGA", payload: res.data });
     }
