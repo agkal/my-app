@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import {
@@ -13,13 +12,12 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
+  NavLink
 } from 'reactstrap';
+
+import Passengers from './passengers';
+import Airlines from './airlines';
+import Settings from './settings';
 
 const Customer = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,13 +54,13 @@ const Customer = (props) => {
             <Home />
           </Route>
           <Route path="/passengers">
-            <About />
+          <Passengers />
           </Route>
           <Route path="/airlines">
-            <Dashboard />
+            <Airlines />
           </Route>
           <Route path="/settings">
-            <Dashboard />
+            <Settings />
           </Route>
         </Switch>
 
@@ -79,20 +77,6 @@ function Home() {
   );
 }
 
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
 
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}
 
 export default Customer;
