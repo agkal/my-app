@@ -1,10 +1,10 @@
 import './App.css';
-import Customer from './components/customer';
+import NavigationBar from './components/navigation-bar/navigation-bar';
 
 function App() {
   return (
     <div className="App">
-      <Customer />
+      <NavigationBar />
     </div>
   );
 }
