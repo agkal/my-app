@@ -9,7 +9,7 @@ export class AirlinesGridData extends Component {
         return (
             <div>
                 airlines data from api
-                <DataGridAirlinesDisplay airlineData={this.props.post} />
+                <DataGridAirlinesDisplay airlineData={this.props.allState.sagaData} />
 
             </div>
         );
@@ -17,7 +17,6 @@ export class AirlinesGridData extends Component {
 }
 
 const mapStateToProps = state => {
-
     return {
         post: state.post,
         allState: state

@@ -8,6 +8,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link,
+  Redirect,
+  useHistory,
+  useLocation,
 } from "react-router-dom";
 
 import {
@@ -19,6 +23,8 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import ProtectedRoutes from './protected-route';
+
 
 const NavigationBar = (props) => {
 
@@ -26,7 +32,7 @@ const NavigationBar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-
+    
     <Router>
       <div>
         <Navbar color="light" light expand="md">
@@ -88,6 +94,7 @@ function Home() {
   return (
     <div>
       <h2>Home</h2>
+      <ProtectedRoutes />
     </div>
   );
 }

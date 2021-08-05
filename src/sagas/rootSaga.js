@@ -3,6 +3,7 @@ import { sample } from './../services/sample';
 
 function* actionWatcher(){
     yield takeLatest("GET_DATA_SAGA", getData);
+    yield takeLatest("GET_ROUTES_PROTECTED", getIsRoutesProtected);
 }
 
 function* getData(){
@@ -20,6 +21,15 @@ function* getData(){
 
 }
 
+function* getIsRoutesProtected(isChecked){
+        debugger;
+        const res = isChecked.isCheckedGlobal;
+        debugger;
+
+        yield put({ type: "SET_ROUTES_PROTECTED", isChecked: res });
+    
+
+}
 //registering watchers
 export const rootSaga = function* rootSaga(){
     yield all([actionWatcher()]);

@@ -5,7 +5,6 @@ import { AirlinesGridData } from './airlines-grid-data';
 export class Airlines extends Component {
 
     handleClickSaga = () => {
-
         this.props.getData();
         console.log("airlines: ", this.props);
     }
@@ -15,7 +14,7 @@ export class Airlines extends Component {
 
         return (
             <div>
-                <input type="button" value="Dispatch method from Saga" onClick={this.handleClickSaga} />
+                <input type="button" value="Click here to display data" onClick={this.handleClickSaga} />
                 <br />
                 <br />
                 <AirlinesGridData />

@@ -3,7 +3,8 @@ const initState = {
         { id: "1", name: "abdul", country: "pak", logo: null, slogan: "hurray", head_quaters: null, website: "www.google.com", established: 1998 },
         { id: "2", name: "ghaffar", country: "pak", logo: null, slogan: "hurray", head_quaters: null, website: "www.youtube.com", established: 1999 },
     ],
-    sagaData: []
+    sagaData: [],
+    isChecked: false
 };
 
 export const rootReducer = (state = initState, action) => {
@@ -32,6 +33,21 @@ export const rootReducer = (state = initState, action) => {
             ...state, 
             sagaData: action.payload 
         };
+
+    }
+    else if (action.type === "SET_ROUTES_PROTECTED") {
+        console.log("action check", action.isChecked);
+        return { 
+            ...state, 
+            isChecked:  action.isChecked
+        };
+
+    }
+    else if (action.type === "GET_ROUTES_PROTECTED") {
+        return {
+            ...state,
+            isChecked:  action.isChecked
+        }
 
     }
 
