@@ -6,7 +6,6 @@ export class Airlines extends Component {
 
     handleClickSaga = () => {
         this.props.getData();
-        console.log("airlines: ", this.props);
     }
 
 

@@ -2,11 +2,22 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 export class ProtectedRoutes extends Component {
+    
     render() {
-        console.log("props navbar ",this.props.allState);
+
+        const isChecked = this.props.allState.isChecked;
+        let  content;
+
+        if(isChecked === false){
+             content = <div>Not protected</div>;
+        }
+        else{
+            content = <div>Protected</div>;
+        }
+
         return (
             <div>
-                
+                {content}
             </div>
         )
     }
@@ -19,6 +30,4 @@ const mapStateToProps = state => {
   };
   
   ProtectedRoutes = connect(mapStateToProps, null)(ProtectedRoutes);
-//ProtectedRoutes = connect(state => {return {allStates: state}}, null)(ProtectedRoutes);
-
   export default ProtectedRoutes;

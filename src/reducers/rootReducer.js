@@ -36,18 +36,11 @@ export const rootReducer = (state = initState, action) => {
 
     }
     else if (action.type === "SET_ROUTES_PROTECTED") {
-        console.log("action check", action.isChecked);
+
         return { 
             ...state, 
             isChecked:  action.isChecked
         };
-
-    }
-    else if (action.type === "GET_ROUTES_PROTECTED") {
-        return {
-            ...state,
-            isChecked:  action.isChecked
-        }
 
     }
 

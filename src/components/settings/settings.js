@@ -25,12 +25,10 @@ export class Settings extends Component {
     }
 
     render() {
-        console.log("props: ", this.props);
-        console.log("is checkded: ", this.state.isChecked);
 
         return (
             <div>
-                settings
+                Click here to protect routes:
                 <input type="checkbox"  name="isChecked" value={this.props.allState.isChecked} onChange={this.handleChange}  defaultChecked={false}  className="checkbox"  />
 
             </div>

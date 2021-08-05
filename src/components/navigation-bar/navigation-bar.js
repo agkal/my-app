@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
-import Passengers from '../passengers/passengers';
-import Airlines from '../airlines/airlines';
-import Settings from '../settings/settings';
-import PostAirlines from '../post-airlines/post-airlines';
-import SearchAirlines from '../search-airlines/search-airlines';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation,
-} from "react-router-dom";
+import React, { useState } from "react";
+import Passengers from "../passengers/passengers";
+import Airlines from "../airlines/airlines";
+import Settings from "../settings/settings";
+import PostAirlines from "../post-airlines/post-airlines";
+import SearchAirlines from "../search-airlines/search-airlines";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import {
   Collapse,
@@ -22,17 +15,15 @@ import {
   Nav,
   NavItem,
   NavLink,
-} from 'reactstrap';
-import ProtectedRoutes from './protected-route';
-
+} from "reactstrap";
+import ProtectedRoutes from "./protected-route";
 
 const NavigationBar = (props) => {
-
+  
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    
     <Router>
       <div>
         <Navbar color="light" light expand="md">
@@ -83,14 +74,12 @@ const NavigationBar = (props) => {
             <SearchAirlines />
           </Route>
         </Switch>
-
       </div>
     </Router>
   );
-}
+};
 
 function Home() {
-
   return (
     <div>
       <h2>Home</h2>
